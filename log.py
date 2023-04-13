@@ -32,7 +32,7 @@ def transfer_saves():
         ftp_host.chdir(logurl)
         names = ftp_host.listdir(ftp_host.curdir)
 
-        print(f"\nThere are {len(names) - 1} log files. They may take a while to download, so please be patient.\n")
+        print(f"\nThere are {len(names)} log files. They may take a while to download, so please be patient.\n")
 
         for savefile in names:
             print(f" -> Downloading '{savefile}'...")

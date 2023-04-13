@@ -95,4 +95,4 @@ def icons(icon):
     return send_file(f'./static/img/{icon}')
 
 if __name__ == '__main__':
-    app.run('192.168.0.69', 80, debug=True)
+    app.run('127.0.0.1', 80, debug=True)
