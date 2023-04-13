@@ -12,14 +12,14 @@ def get_title_info(tid, type):
             #return "Super Mario"
         
             url = f"https://ninja.wup.shop.nintendo.net/ninja/ws/titles/id_pair?title_id[]={tid}"
-            data = requests.get(url, verify=False, cert="static/WIIU_WOOD_1_CERT.pem").text
+            data = requests.get(url, verify=False, cert="WIIU_WOOD_1_CERT.pem").text
 
             bs = BeautifulSoup(data, 'lxml')
             ns_uid = bs.find("ns_uid")
             
             if ns_uid is not None:
                 url = f"https://samurai.wup.shop.nintendo.net/samurai/ws/GB/title/{ns_uid.text}/?shop_id=2"
-                data = requests.get(url, verify=False, cert="static/WIIU_WOOD_1_CERT.pem").text
+                data = requests.get(url, verify=False, cert="WIIU_WOOD_1_CERT.pem").text
 
                 bs = BeautifulSoup(data, 'lxml')
 
@@ -94,4 +94,4 @@ def icons(icon):
     return send_file(f'static/img/{icon}')
 
 if __name__ == '__main__':
-    app.run('127.0.0.1', 8080, debug=False)
+    app.run('127.0.0.1', 8080, debug=True)
