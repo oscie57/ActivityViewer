@@ -22,7 +22,6 @@ def get_title_info(tid, type):
                 data = requests.get(url, verify=False, cert="./static/WIIU_WOOD_1_CERT.pem").text
 
                 bs = BeautifulSoup(data, 'lxml')
-                print(url)
 
                 name = bs.find("name")
 
