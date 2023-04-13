@@ -10,10 +10,8 @@ from struct import *
 address = input("Enter the Wii U's IP address. Do not include the port.\n -> ")
 
 # Declare other variables
-userid = input("Enter the user ID of whom you would like to extract the save. Example: '80000003'.\n -> ")
 titleurl = "/storage_mlc/usr/save/system/pdm/[userid]/"
-
-logurl = titleurl.replace("[userid]", userid)
+titleurlnu = "/storage_mlc/usr/save/system/pdm/"
 
 def file_check():
 
@@ -27,7 +25,18 @@ def file_check():
 def transfer_saves():
 
     with ftputil.FTPHost(address, "anonymous", "anonymous") as ftp_host:
-        print("\nConnected to Wii U!")
+        print("\nConnected to Wii U!\n")
+
+        ftp_host.chdir(titleurlnu)
+        names = ftp_host.listdir(ftp_host.curdir)
+        print("There are the following users on the Wii U:")
+
+        for name in names:
+            if name == "version": continue
+            print(f" -> {name}")
+
+        userid = input("\nEnter the user ID of whom you would like to extract the save. Example: '80000003'.\n -> ")
+        logurl = titleurl.replace("[userid]", userid)
 
         ftp_host.chdir(logurl)
         names = ftp_host.listdir(ftp_host.curdir)
