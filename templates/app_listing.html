@@ -1,0 +1,25 @@
+<tr>
+    <th>
+        <img src={{ get_title_name(tid, 'icon') }} height="128", width="128" title="{{ get_title_name(tid, 'name') }}" style="border-radius: 15px;">
+    </th>
+    <th width="30%">
+        <h2>{{ get_title_name(tid, 'name') }}</h2>
+        <h5 class="tid">{{ get_title_name(tid, 'code') }}</h5>
+        <h5 class="tid">{{ tid }}</h5>
+    </th>
+    <th>
+        <h3>Total time played</h3>
+        <h5>{{ convert_minutes(time) }}</h5>
+        <h3>Number of times played</h3>
+        <h5>{{ count }} times</h5>
+    </th>
+    <th>
+        <h3>First time played</h3>
+        <h5>{{ getdate(first) }}</h5>
+        <h3>Last time played</h3>
+        <h5>{{ getdate(last) }}</h5>
+    </th>
+    <th>
+        <img src="{{ get_title_name(tid, 'rating') }}" height="128">
+    </th>
+</tr>

@@ -1,0 +1,54 @@
+@font-face {
+    font-family: "cafestd";
+    src:url("/fonts/CAFESTD.woff"),
+        url("/fonts/CAFESTD.woff2");
+}
+
+body {
+    font-family:'cafestd';
+    color: black;
+
+    background-image: radial-gradient(#f3f3f3 25%, transparent 20%),
+      radial-gradient(#f3f3f3 25%, transparent 20%);
+    background-color: #ffffff;
+    background-position: 0 0, 50px 50px;
+    background-size: 100px 100px;
+}
+
+.center {
+    text-align: center;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+/* Track */
+::-webkit-scrollbar-track {
+background: #ffffff;
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #f3f3f3;
+}
+
+
+.tid {
+    color: #5f5f5f
+}
+table {
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: left;
+}
+
+
+hr {
+    width: 80%;
+    color: #cfcfcf
+}
+th {
+    padding-right: 30px
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>ActivityViewer - Statistics</title>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1 class="center">ActivityViewer</h1>
+
+        <h3 class="center">Entry count: {{ count }}</h3>
+
+        <div class="applist">
+            <table>
+                {% for listing in statslist %}
+                    {% with get_title_name=get_title_name, getdate=getdate, tid=listing['tid'], time=listing['time'], count=listing['count'], first=listing['first'], last=listing['last'] %}
+                        {% include 'app_listing.html' %}
+                    {% endwith %}
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+</html>

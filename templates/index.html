@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>ActivityViewer</title>
+        
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1 class="center">ActivityViewer</h1>
+
+        <table>
+            <th>
+                <a href="/diary"><button class="center">PlayDiary</button></a>
+                {{ diaryentrycount }} entries
+            </th>
+            <th>
+                <a href="/stats"><button class="center">PlayStats</button></a>
+                {{ statsentrycount }} entries | {{ totaltime }} played total
+            </th>
+        </table>
+    </body>
+</html>
